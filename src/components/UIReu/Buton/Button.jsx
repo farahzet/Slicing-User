@@ -4,7 +4,8 @@ export const Button = ({
     onClick,
     type,
     id,
-    disabled
+    disabled,
+    style
 }) => {
     return (
     <button
@@ -13,6 +14,7 @@ export const Button = ({
         id={id}
         disabled={disabled}
         onClick={onClick}
+        style={style}
     >
         {children}
     </button>

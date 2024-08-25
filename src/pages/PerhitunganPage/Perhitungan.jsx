@@ -83,6 +83,8 @@ export const Perhitungan = () => {
             weightCategory = "Normal";
         }
 
+        bbi = parseFloat(bbi.toFixed(2));
+
         // Store BBI and weight category in localStorage
         localStorage.setItem('bbi', bbi);
         localStorage.setItem('weightCategory', weightCategory);

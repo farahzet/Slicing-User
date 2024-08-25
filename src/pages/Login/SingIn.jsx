@@ -113,7 +113,7 @@ const FormSignIn = () => {
         console.log('Form Data to be sent:', formData);
 
         for (const field in form) {
-            validateLogin({ target: { name: field, value: form[field] } });
+            validateRegist({ target: { name: field, value: form[field] } });
         }
 
         // Check if there are any errors

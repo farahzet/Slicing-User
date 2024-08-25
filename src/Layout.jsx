@@ -21,7 +21,7 @@ export const Layout = () => {
         </div>
 
         <div className="drawer-content">
-            <div className="d-flex justify-content-between align-items-center mx-4 mx-md-0 shadow-sm">
+            <div className="d-flex justify-content-between align-items-center mx-4 mx-md-0">
             <MemoizedNavbar />
             <Button
                 className={'p-0 d-flex d-md-none'}

@@ -4,18 +4,18 @@ import { useNavigate, NavLink } from "react-router-dom";
 import LogoutIcon from '../../assets/images/Icon-Lg.svg'
 import { sides } from '../../Utils/dataObj'
 import Logo from '../../assets/images/Logo.png'
-import logout from '../../assets/images/logout.svg'
 import { useState } from "react";
 import './Sidebar.css'
+import logout from '../../assets/images/logout.svg'
 import Cookies from "js-cookie";
 
 export const Sidebar = () => {
     const [modal, setModal] = useState(false)
     const navigate = useNavigate();
     const handleLogout = () => {
-    Cookies.remove('_token')
-      navigate('/login')
-    }
+        Cookies.remove('_token')
+        navigate('/login')
+      }
     return(
         <>
          <aside className='sidebar'>
@@ -62,7 +62,6 @@ export const Sidebar = () => {
                 <CustomModal
                 icon={logout}
                 title={'Keluar?'}
-                content={'Ingin beristirahat sejenak? keluar dan nikmati waktu Anda.'}
                 confirmAction={handleLogout}
                 cancelAction={() => setModal(false)}
                 />

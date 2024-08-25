@@ -162,32 +162,25 @@ export const CreateSpk = () => {
     
       console.log("Selected Items Data:", selectedItemsData);
     
-      // Calculate total calories for the selected values
-      // const totalCalories = selectedValues.reduce((total, value) => {
-      //   const item = data.find(dataItem => dataItem.food_code === value);
-      //   const calories = item ? parseFloat(item.total_score) : 0;  // Convert to float
-      //   return total + (isNaN(calories) ? 0 : calories);  // Handle NaN case
-      // }, 0);
-
       const totalCaloriesSelected = selectedValues.reduce((total, value) => {
         const item = data.find(dataItem => dataItem.food_code === value);
         const calories = item ? parseFloat(item.total_score) : 0;  // Convert to float
         return total + (isNaN(calories) ? 0 : calories);  // Handle NaN case
-      }, 0).toFixed(2);
-
+      }, 0);
+    
+      const averageCalories = (totalCaloriesSelected / selectedValues.length).toFixed(2);
+      console.log("Average Calories Per Item:", averageCalories);
+    
       const portionSize = parseFloat(calculatePortionSize());
-
-      // Check if total selected calories exceed the portion size
-      if (totalCaloriesSelected > portionSize) {
-        alert(`Total kalori yang dipilih (${totalCaloriesSelected}) melebihi porsi yang dihitung (${portionSize}). Silakan pilih makanan dengan total kalori yang lebih rendah.`);
+    
+      // Check if average calories exceed the portion size
+      if (averageCalories > portionSize) {
+        alert(`Rata-rata kalori per item (${averageCalories}) melebihi porsi yang dihitung (${portionSize}). Silakan pilih makanan dengan rata-rata kalori yang lebih rendah.`);
         return;
       }
-
     
-      // const newSelections = [...selections, { id: selectionCount + 1, food_name: selectedItemsData, total_score: totalCalories }];
-      // console.log("New Selections:", newSelections);
-
-      const newSelections = [...selections, { id: selectionCount + 1, food_name: selectedItemsData, total_score: totalCaloriesSelected }];
+      // Save the average calories to total_score instead of totalCaloriesSelected
+      const newSelections = [...selections, { id: selectionCount + 1, food_name: selectedItemsData, total_score: averageCalories }];
       console.log("New Selections:", newSelections);
     
       setSelections(newSelections);
@@ -198,6 +191,9 @@ export const CreateSpk = () => {
       setSelectedItems([]);
       setSelectAll(false);
     };
+    
+    
+    
     
     
     
