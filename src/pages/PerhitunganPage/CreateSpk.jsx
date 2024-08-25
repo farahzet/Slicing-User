@@ -293,35 +293,33 @@ export const CreateSpk = () => {
 
         
   
-        <div className="d-grid gap-2 d-md-flex justify-content-md-end" style={{ marginRight: '20px' }}>
-          {showSelectButtons ? (
-            <>
-              <Button
-                className="btn btn-success"
-                style={{ marginRight: '10px', width: '10px' }}
-                onClick={handleSubmit}
-              >
-                Submit
-              </Button>
-              <Button
-                className="btn btn-secondary"
-                style={{ marginRight: '10px', width: '10px' }}
-                onClick={handleCancel}
-              >
-                Batal
-              </Button>
-            </>
-          ) : (
-            <Button
-              className="btn btn-dark"
-              style={{ marginRight: '10px', width: '10px' }}
-              onClick={toggleSelectButtons}
-            >
-              Pilih
-            </Button>
-          )}
+        <div className="d-grid gap-2 d-md-flex justify-content-md-end">
+            {showSelectButtons ? (
+                <>
+                    <Button
+                        className="btn btn-success"
+                        onClick={handleSubmit}
+                    >
+                        Submit
+                    </Button>
+                    <Button
+                        className="btn btn-secondary"
+                        onClick={handleCancel}
+                    >
+                        Batal
+                    </Button>
+                </>
+            ) : (
+                <Button
+                    className="btn btn-dark"
+                    onClick={toggleSelectButtons}
+                >
+                    Pilih
+                </Button>
+            )}
         </div>
-        <div className="table-responsive p-4" style={{ maxHeight: '200px', overflowY: 'auto' }}>
+
+        <div className="table-responsive p-4">
           <table className="table" style={{ marginTop: '20px' }}>
             <thead>
               <tr>
@@ -367,7 +365,7 @@ export const CreateSpk = () => {
                 );
               })
             ) : (
-          <tr>ftf
+          <tr>
             <td colSpan="4">No data available</td>
           </tr>
         )}

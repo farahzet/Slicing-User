@@ -85,3 +85,9 @@
         width: 100%; /* Full-width buttons on medium and smaller screens */
     }
 }
+
+.table-responsive {
+    max-height: 300px; /* Adjusted height */
+    overflow-y: auto;
+    margin-top: 20px;
+}
