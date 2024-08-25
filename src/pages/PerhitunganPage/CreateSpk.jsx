@@ -291,8 +291,6 @@ export const CreateSpk = () => {
         </div>
         </div>
 
-        
-  
         <div className="d-grid gap-2 d-md-flex justify-content-md-end">
             {showSelectButtons ? (
                 <>
@@ -319,7 +317,7 @@ export const CreateSpk = () => {
             )}
         </div>
 
-        <div className="table-responsive p-4">
+        <div className="table-responsive rounded-4 p-4 border">
           <table className="table" style={{ marginTop: '20px' }}>
             <thead>
               <tr>
@@ -374,7 +372,8 @@ export const CreateSpk = () => {
         </div>
 
         <PerhitunganTabel
-        thead={theadPilihanMakanan}>
+        thead={theadPilihanMakanan}
+        className={'border'}>
           <Rowtable
               ifEmpty={"Tidak ada data Riwayat Pemilihan!"}          
               data={selections}

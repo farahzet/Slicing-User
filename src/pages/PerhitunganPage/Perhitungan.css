@@ -1,4 +1,4 @@
-/* Perhitungan.css */
+
 
 .container-fluid {
     padding: 0 15px;
@@ -31,17 +31,17 @@
     gap: 1rem; /* Space between grid items */
 }
 
-@media (min-width: 576px) {
+/* @media (min-width: 576px) {
     .row {
         display: flex;
         flex-wrap: wrap;
-        gap: 1rem; /* Space between columns */
+        gap: 1rem; 
     }
 
     .col {
         flex: 1;
     }
-}
+} */
 
 @media (max-width: 576px) {
     .col {
